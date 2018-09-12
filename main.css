@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    height: 600px;
+    width: 100%;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.sky {
+    height: 60%;
+    width: 100%;
+    background: turquoise;
+    display: flex;
+   
+}
+
+.ground {
+    height: 40%;
+    width: 100%;
+    background: burlywood;
+   
+    
+}
+
+.net {
+    width:4%;
+    height:30%;
+    background: whitesmoke;
+    align-self: flex-end;
+    margin: 0 auto;
+    position: absolute;
+    right: 640px;   
+
+}
+
+.player1 {
+    width: 4%;
+    height:15%;
+    background: yellow;
+    align-self: flex-end;
+    
+}

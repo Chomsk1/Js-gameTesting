@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="sky">
+        <div class="net"></div>
+        <div class="player1"></div>
+         </div>
+
+    <div class="ground">
+
+    </div>
+    
+    <script>
+        var player1 = document.querySelector('.player1');
+        var position1 = 0;
+        var position2 = 0;
+        var velocity = 0;
+        var jump = 0;
+        var event = 0;
+        
+        
+        window.addEventListener ('keydown', function (event){
+            if (event.code === 'ArrowUp' && position2 === 0) {
+                jump = 3;
+            }
+            
+        })
+
+      
+
+        window.addEventListener ('keyup', function(event){
+            if (event.code === 'ArrowUp') {
+                jump = 0;
+                
+            }
+        })
+
+
+       
+
+        window.addEventListener ('keydown', function (event){ 
+            if (event.code === 'ArrowRight') {
+                velocity = 3;
+            }
+        })
+
+        window.addEventListener ('keyup', function (event){ 
+            if (event.code === 'ArrowRight') {
+                velocity = 0;
+            }
+        })
+        
+
+
+        window.addEventListener ('keydown', function (event){
+            if (event.code === 'ArrowLeft') {
+                velocity = -3;
+            }
+        })
+
+        window.addEventListener ('keyup', function (event){
+            if (event.code === 'ArrowLeft')
+            velocity = 0;
+        })
+
+        setInterval (function (){
+
+            position1 += velocity;
+            player1.style.marginLeft = position1 + 'px';
+            // position1 + 'px' < 0 + 'px'
+
+        } ,16)
+
+        setInterval (function(){
+            position2 += jump;
+            player1.style.marginBottom = position2 + 'px';
+
+        }, 16)  
+
+        setInterval (function(){
+            if (position1 < 0) {
+            position1 = 0 }
+        }, 1)
+        
+        setInterval (function(){
+        if (position1 > 546 ) {
+            position1 = 549
+        }
+
+        }, 1)
+
+         setInterval (function(){
+        if (position2 > 0) {
+        position2 -= 1;
+        }
+    }, 16)
+
+       
+    </script>
+</body>
+</html>
